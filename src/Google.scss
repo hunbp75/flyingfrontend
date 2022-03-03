@@ -1,0 +1,9 @@
+@import "./layout.scss";
+
+.google-button {
+  flex-direction: column;
+  text-align: center;
+
+  padding: $base-padding/4;
+  border-radius: 10px;
+}

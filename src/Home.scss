@@ -1,0 +1,16 @@
+@import "./colors.scss";
+@import "./layout.scss";
+
+.width-bass-text-color {
+  color: $text-color;
+}
+
+.home {
+  p,
+  h1 {
+    @extend .width-bass-text-color;
+    text-align: center;
+    margin: 2rem;
+  }
+  padding: $base-padding;
+}

@@ -1,8 +1,9 @@
 import { useState } from "react";
+import "./UserForm.scss";
 
-const UserForm = (props) => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+const Userform = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,26 +19,32 @@ const UserForm = (props) => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
   return (
-    <div>
+    <div className="user-form">
+      <h1>{props.title}</h1>
       <form onSubmit={handleSubmit}>
         <input
-          placeholder="Email"
+          placeholder="email"
           type="email"
           value={email}
           onChange={handleEmailChange}
+          disabled={props.loading}
         />
         <input
-          placeholder="Password"
+          placeholder="password"
           type="password"
           value={password}
           onChange={handlePasswordChange}
+          disabled={props.loading}
         />
-        <button type="submit">Submit</button>
+        <div>
+          <button type="submit" disabled={props.loading}>
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );
 };
 
-export default UserForm;
+export default Userform;
